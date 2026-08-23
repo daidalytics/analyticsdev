@@ -178,7 +178,7 @@ If the site does not update, go to **Settings → Pages** in the GitHub repo and
 
 ### First-time setup (one-off)
 
-This site is a GitHub Pages **project site** — one repo, one custom domain. It is independent of the `gunnargriese.github.io` user site that serves `gunnargriese.com`; an account can only have one user site, but any number of project sites, each with its own domain.
+This site is a GitHub Pages **project site** owned by the `daidalytics` account — one repo, one custom domain. It is entirely independent of the `gunnargriese.github.io` user site that serves `gunnargriese.com`: an account may have only one user site, but any number of project sites, each with its own domain.
 
 **1. Create the repo and push**
 
@@ -188,8 +188,10 @@ git init -b main
 git add .
 git commit -m "Initial commit: analyticsdev.net site"
 gh auth login
-gh repo create analyticsdev --public --source=. --push
+gh repo create daidalytics/analyticsdev --public --source=. --push
 ```
+
+> If a push fails with `RPC failed; HTTP 400`, the pack has exceeded git's 1 MB default `http.postBuffer` and switched to chunked encoding. Fix with `git config http.postBuffer 524288000`, or fall back to `git config --global http.version HTTP/1.1`, or use the SSH remote `git@github.com:daidalytics/analyticsdev.git`.
 
 **2. Enable GitHub Pages**
 
@@ -210,9 +212,9 @@ GitHub reads the existing `CNAME` file and fills in the custom domain automatica
 | AAAA  | `@`   | `2606:50c0:8001::153`    |
 | AAAA  | `@`   | `2606:50c0:8002::153`    |
 | AAAA  | `@`   | `2606:50c0:8003::153`    |
-| CNAME | `www` | `gunnargriese.github.io.` |
+| CNAME | `www` | `daidalytics.github.io.`  |
 
-These are the same GitHub Pages IPs used by the `gunnargriese.com` apex — the records can be copied from that domain's zone. Confirm against the [GitHub Pages docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) before pasting, in case the addresses have changed.
+The `www` CNAME must point at the **owner of this repo** (`daidalytics`), not at a personal account. The four A records are the shared GitHub Pages IPs and are the same ones used by the `gunnargriese.com` apex, so those can be copied from that domain's zone. Confirm against the [GitHub Pages docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) before pasting, in case the addresses have changed.
 
 Check propagation with:
 
