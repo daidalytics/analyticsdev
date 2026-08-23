@@ -1073,6 +1073,21 @@ section + section {
   font-size: 0.9375rem;
 }
 
+/* One name in the pair is linked. The underline is dropped to the muted
+   hairline the rest of the page uses, so the two names still read as one
+   line rather than a link sitting next to plain text. */
+.programme-directors-names a {
+  color: var(--color-text);
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+
+.programme-directors-names a:hover {
+  color: var(--color-accent-hl);
+  text-decoration-color: currentColor;
+}
+
 /* ============================================================
    SPONSORS / PARTNERS SECTION
    ============================================================ */
@@ -1199,10 +1214,6 @@ section + section {
 
 .speaker-card--placeholder .speaker-name {
   color: var(--color-text-muted);
-}
-
-.speaker-card--placeholder .speaker-role {
-  min-height: 0;
 }
 
 /* ============================================================
