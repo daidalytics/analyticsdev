@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: Update the title and description each year -->
+  <title>AnalyticsDev — 17 March 2027 · Copenhagen</title>
+  <meta name="description"
+    content="AnalyticsDev is a code-first evening conference for technical digital analysts, implementation specialists, and data engineers. 17 March 2027, Campus Carlsberg, Copenhagen.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <!-- EDIT: Update the logo href if BLC URL changes -->
+      <a href="https://brandleadership.community" class="nav-logo" target="_blank" rel="noopener"
+        aria-label="BrandLeadership Community">
+        <img src="assets/logo/image.png" alt="BrandLeadership Community">
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#partners">Partners</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         EDIT: Update date, venue, Billetto URL, and ticket prices each year
+         ============================================================ -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container">
+
+        <div class="hero-split">
+
+          <div class="hero-lede">
+            <p class="hero-eyebrow">analyticsdev.net / 2027 / copenhagen</p>
+            <h1 id="hero-heading">Analytics<span class="wordmark-dev">Dev</span></h1>
+            <p class="hero-tagline">A code-first evening event for technical digital analysts, implementation
+              specialists, and data engineers.</p>
+
+            <div class="btn-group">
+              <!-- EDIT: Update the Billetto href below when registration opens -->
+              <a href="https://billetto.dk/e/analyticsdev-net-ii-billetter-1913135" class="btn btn-primary"
+                target="_blank" rel="noopener">
+                Register on Billetto
+              </a>
+              <!-- EDIT: Update the BLC event page URL below -->
+              <a href="https://brandleadership.community/Insights/analytics-dev-17-march-2027/" class="hero-link-quiet"
+                target="_blank" rel="noopener">
+                View on BrandLeadership Community &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <p class="hero-panel-head"><span class="hero-panel-dot"></span>registration is open</p>
+
+            <dl class="hero-facts">
+              <!-- EDIT: Update date and venue below. Remove venue-tba span when venue is confirmed. -->
+              <dt>date</dt>
+              <dd>17 March 2027</dd>
+
+              <dt>venue</dt>
+              <dd>Copenhagen &middot; <span class="venue-tba">TBC</span></dd>
+
+              <!-- EDIT: Update ticket prices below -->
+              <dt>early bird</dt>
+              <dd class="is-early">1,250 DKK</dd>
+
+              <dt>standard</dt>
+              <dd>1,900 DKK</dd>
+
+              <dt>3-day pass</dt>
+              <dd>14,000 DKK</dd>
+            </dl>
+          </div>
+
+        </div>
+
+        <div class="hero-speakers">
+          <div class="hero-speakers-head">
+            <p class="hero-speakers-label">// confirmed speakers</p>
+            <div class="hero-speakers-nav" data-playing="true">
+              <button type="button" class="carousel-btn" data-carousel-toggle aria-label="Pause">
+                <svg class="icon-pause" viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+                  <rect x="1.5" y="1" width="2.5" height="8" rx="0.5" />
+                  <rect x="6" y="1" width="2.5" height="8" rx="0.5" />
+                </svg>
+                <svg class="icon-play" viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+                  <path d="M2.5 1 L9 5 L2.5 9 Z" />
+                </svg>
+              </button>
+              <button type="button" class="carousel-btn" data-carousel-prev
+                aria-label="Previous speakers">&larr;</button>
+              <button type="button" class="carousel-btn" data-carousel-next aria-label="Next speakers">&rarr;</button>
+            </div>
+          </div>
+          <div class="hero-speakers-track" role="region" aria-label="Confirmed speakers" tabindex="0">
+            <div class="hero-speaker-tile">
+              <span class="hero-speaker-frame"><img class="hero-speaker-photo" src="assets/speakers/2027/simo-ahava.jpg"
+                  alt="Simo Ahava"></span>
+              <span class="hero-speaker-name">Simo Ahava</span>
+              <span class="hero-speaker-role">Co-founder</span>
+              <span class="hero-speaker-org">@Team Simmer</span>
+            </div>
+            <div class="hero-speaker-tile">
+              <span class="hero-speaker-frame"><img class="hero-speaker-photo"
+                  src="assets/speakers/2027/caroline-vidal.jpeg" alt="Caroline Vidal"></span>
+              <span class="hero-speaker-name">Caroline Vidal</span>
+              <span class="hero-speaker-role">Senior Martech Engineer</span>
+              <span class="hero-speaker-org">@DFDS</span>
+            </div>
+            <div class="hero-speaker-tile">
+              <span class="hero-speaker-frame"><img class="hero-speaker-photo"
+                  src="assets/speakers/2027/rune-andersen.jpeg" alt="Rune Andersen"></span>
+              <span class="hero-speaker-name">Rune Andersen</span>
+              <span class="hero-speaker-role">Founder</span>
+              <span class="hero-speaker-org">@Event Watcher</span>
+            </div>
+            <div class="hero-speaker-tile">
+              <span class="hero-speaker-frame"><img class="hero-speaker-photo"
+                  src="assets/speakers/2027/ayla-prinz.jpeg" alt="Ayla Prinz"></span>
+              <span class="hero-speaker-name">Ayla Prinz</span>
+              <span class="hero-speaker-role">Co-founder</span>
+              <span class="hero-speaker-org">@elbwalker</span>
+            </div>
+            <div class="hero-speaker-tile">
+              <span class="hero-speaker-frame"><img class="hero-speaker-photo"
+                  src="assets/speakers/2027/artem-korneev.jpeg" alt="Artem Korneev"></span>
+              <span class="hero-speaker-name">Artem Korneev</span>
+              <span class="hero-speaker-role">Lead Technical Web Analyst</span>
+              <span class="hero-speaker-org">@OMMAX</span>
+            </div>
+            <div class="hero-speaker-tile">
+              <span class="hero-speaker-frame"><img class="hero-speaker-photo"
+                  src="assets/speakers/2027/fosca-fimiani.jpeg" alt="Fosca Fimiani"></span>
+              <span class="hero-speaker-name">Fosca Fimiani</span>
+              <span class="hero-speaker-role">Data Analyst</span>
+              <span class="hero-speaker-org">@MultiMinds</span>
+            </div>
+            <div class="hero-speaker-tile">
+              <span class="hero-speaker-frame"><img class="hero-speaker-photo"
+                  src="assets/speakers/2027/nicolas-hinternesch.jpeg" alt="Nicolas Hinternesch"></span>
+              <span class="hero-speaker-name">Nicolas Hinternesch</span>
+              <span class="hero-speaker-role">Global VP Sales Engineering</span>
+              <span class="hero-speaker-org">@Piano</span>
+            </div>
+            <!-- EDIT: add new speaker tiles here -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+         EDIT: Update the description if the conference concept evolves
+         ============================================================ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+
+        <h2 id="about-heading">Analytics, engineered</h2>
+        <p class="about-text">
+          AnalyticsDev is an evening conference built for the people doing the work — implementation engineers, data
+          engineers, and technical analysts who live in the detail of tagging, tracking, cloud infrastructure, and
+          analytics engineering. We bring together practitioners to share real-world solutions, not strategy decks.
+        </p>
+        <p class="about-text">
+          Expect hands-on lightning talks, expert keynotes, and curated peer discussions focused on practical
+          problem-solving and advanced implementation techniques. You will walk away with actionable insights, new
+          technical peers, and a fresh perspective on what is possible when analytics meets engineering.
+        </p>
+
+        <!-- EDIT: Add, remove, or update format cards below -->
+        <div class="format-grid" role="list" aria-label="Event formats">
+          <div class="format-card" role="listitem">
+            <p class="format-card-name">Lightning Talks</p>
+            <p class="format-card-desc">Ten minutes, one problem, one solution. Speakers share what they built, what
+              broke, and what shipped — no filler.</p>
+          </div>
+          <div class="format-card" role="listitem">
+            <p class="format-card-name">Expert Keynotes</p>
+            <p class="format-card-desc">Invited practitioners go deep on a specific technical domain — architecture
+              decisions, implementation trade-offs, and hard-won lessons from the field.</p>
+          </div>
+          <div class="format-card" role="listitem">
+            <p class="format-card-name">Peer Breakout Circles</p>
+            <p class="format-card-desc">Small groups, a shared implementation challenge, and a facilitator. The
+              conversations that don't happen in Slack threads.</p>
+          </div>
+          <div class="format-card" role="listitem">
+            <p class="format-card-name">Food &amp; Drinks</p>
+            <p class="format-card-desc">Sandwiches, soft drinks, beer, and wine with the people who actually built the
+              things you have been reading about. No agenda, no elevator pitches.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         AUDIENCE — who attends
+         ============================================================ -->
+    <section id="audience" aria-labelledby="audience-heading">
+      <div class="container">
+        <h2 id="audience-heading">Built for those in the detail</h2>
+        <p class="about-text">
+          AnalyticsDev draws practitioners who configure, instrument, and maintain the systems that make data collection
+          work. If your work lives at the implementation layer — not just reading the reports, but building and
+          debugging what produces them — these talks are written for you.
+        </p>
+        <p class="audience-qualifier-line">If any of these are part of your day-to-day, you belong here:</p>
+        <div class="audience-tools" aria-label="Technologies and tools">
+          <span class="audience-tool">GTM</span>
+          <span class="audience-tool">sGTM</span>
+          <span class="audience-tool">GA4</span>
+          <span class="audience-tool">BigQuery</span>
+          <span class="audience-tool">dbt</span>
+          <span class="audience-tool">Dataform</span>
+          <span class="audience-tool">Terraform</span>
+          <span class="audience-tool">Firestore</span>
+          <span class="audience-tool">Cloud Run</span>
+          <span class="audience-tool">Firebase</span>
+          <span class="audience-tool">Vertex AI</span>
+          <span class="audience-tool">Playwright</span>
+          <span class="audience-tool">Measurement Protocol</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPEAKERS
+         EDIT: Add speaker cards as they are confirmed.
+               Each card follows the pattern in the template comment below.
+               Use the placeholder card as a guide for cards not yet announced.
+         ============================================================ -->
+    <section id="speakers" aria-labelledby="speakers-heading">
+      <div class="container">
+
+        <h2 id="speakers-heading">Speakers</h2>
+        <p class="section-intro">Speakers are announced on a rolling basis. More to follow.</p>
+
+        <div class="speakers-grid">
+
+          <!-- SPEAKER CARD TEMPLATE (copy this block to add a new speaker):
+               <div class="speaker-card">
+                 <img class="speaker-photo" src="assets/speakers/firstname-lastname.jpg" alt="Full Name">
+                 <div class="speaker-info">
+                   <p class="speaker-name">Full Name</p>
+                   <p class="speaker-role text-muted">Title &middot; Company</p>
+                   <details class="speaker-details">
+                     <summary>Bio &amp; Session</summary>
+                     <p class="speaker-bio">Short bio text here.</p>
+                     <p class="speaker-session-label">Session</p>
+                     <p class="speaker-session">Session title and description here.</p>
+                   </details>
+                 </div>
+               </div>
+          -->
+
+          <!-- EDIT: Update bio and session for Simo Ahava when announced -->
+          <div class="speaker-card">
+            <img class="speaker-photo" src="assets/speakers/simo-ahava.jpg" alt="Simo Ahava">
+            <div class="speaker-info">
+              <p class="speaker-name">Simo Ahava</p>
+              <p class="speaker-role text-muted">Co-founder &middot; Team Simmer</p>
+              <details class="speaker-details">
+                <summary>Bio &amp; Session</summary>
+                <p class="speaker-bio">One of the world's foremost experts in Google Tag Manager and web analytics
+                  implementation. Founder of Team Simmer, an online learning platform for digital analytics and
+                  technical marketers.</p>
+                <!-- EDIT: Replace with actual session title and description when confirmed -->
+                <p class="speaker-session-label">Session</p>
+                <p class="speaker-session">Session to be confirmed. Simo's work spans custom GTM templates,
+                  consent-aware measurement, and browser API integrations — expect depth on whatever he has been
+                  building.</p>
+              </details>
+            </div>
+          </div>
+
+          <!-- EDIT: Add more speaker cards here as they are confirmed.
+               Copy the template above and fill in the details. -->
+
+          <!-- Placeholder — more speakers to be announced -->
+          <div class="speaker-card speaker-card--placeholder">
+            <div class="speaker-photo-placeholder" aria-hidden="true">?</div>
+            <div class="speaker-info">
+              <p class="speaker-name">More speakers coming</p>
+              <p class="speaker-role text-muted">Announcements rolling out</p>
+            </div>
+          </div>
+
+        </div><!-- /speakers-grid -->
+
+        <!-- EDIT: Update programme director names if they change -->
+        <div class="programme-directors">
+          <p class="programme-directors-label">Programme Directors</p>
+          <p class="programme-directors-names">Gunnar Griese &amp; Steen Rasmussen</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROGRAMME
+         This section is in "TBA" mode until the programme is finalised.
+
+         WHEN THE PROGRAMME IS READY:
+         1. Remove the <div class="programme-tba"> block below
+         2. Uncomment the <ul class="programme-list"> block
+         3. Fill in the time slots and sessions
+         ============================================================ -->
+    <section id="programme" aria-labelledby="programme-heading">
+      <div class="container">
+
+        <h2 id="programme-heading">Programme</h2>
+        <!-- EDIT: Update with venue address when confirmed. Remove venue-tba span. -->
+        <p class="programme-date">17 March 2027 &nbsp;·&nbsp; Copenhagen &nbsp;·&nbsp; <span class="venue-tba">venue to
+            be confirmed</span></p>
+
+        <!-- REMOVE THIS BLOCK when the programme is ready -->
+        <div class="programme-tba">
+          <p>The full programme will be announced closer to the event. <a
+              href="https://brandleadership.community/Insights/analytics-dev-17-march-2027/" target="_blank"
+              rel="noopener">Follow updates on BrandLeadership Community &rarr;</a></p>
+        </div>
+
+        <!-- UNCOMMENT AND FILL IN when the programme is ready:
+
+        <ul class="programme-list" aria-label="Event schedule">
+
+          <!- - EDIT: Add, remove, or edit time slots below.
+               Copy a <li> block and update the time and description. - ->
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">Arrival &amp; Registration</div>
+          </li>
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">
+              <strong>Welcome</strong>
+              Gunnar Griese &amp; Steen Rasmussen
+            </div>
+          </li>
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">
+              <strong>Keynotes &amp; Presentations</strong>
+            </div>
+          </li>
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">
+              <strong>Peer-to-Peer Breakout Circles</strong>
+            </div>
+          </li>
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">Food &amp; Drinks</div>
+          </li>
+
+          <li class="programme-item programme-item--multistream">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">
+              <strong>Concurrent Sessions</strong>
+              <span class="multistream-note">Three streams running in parallel — speakers rotate between groups</span>
+
+              <div class="streams-wrapper">
+                <!- - EDIT: Update speaker names and session titles for each stream rotation - ->
+                <div class="streams-rotation">
+                  <span class="streams-rotation-time">TBC</span>
+                  <div class="streams-grid">
+                    <div class="stream-card">
+                      <p class="stream-label">Stream 1</p>
+                      <p class="stream-speaker">Speaker TBA</p>
+                      <p class="stream-session">Session TBA</p>
+                    </div>
+                    <div class="stream-card">
+                      <p class="stream-label">Stream 2</p>
+                      <p class="stream-speaker">Speaker TBA</p>
+                      <p class="stream-session">Session TBA</p>
+                    </div>
+                    <div class="stream-card">
+                      <p class="stream-label">Stream 3</p>
+                      <p class="stream-speaker">Speaker TBA</p>
+                      <p class="stream-session">Session TBA</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="streams-break">Break to change streams</div>
+                <div class="streams-rotation">
+                  <span class="streams-rotation-time">TBC</span>
+                  <div class="streams-grid">
+                    <div class="stream-card">
+                      <p class="stream-label">Stream 1</p>
+                      <p class="stream-speaker">Speaker TBA</p>
+                      <p class="stream-session">Session TBA</p>
+                    </div>
+                    <div class="stream-card">
+                      <p class="stream-label">Stream 2</p>
+                      <p class="stream-speaker">Speaker TBA</p>
+                      <p class="stream-session">Session TBA</p>
+                    </div>
+                    <div class="stream-card">
+                      <p class="stream-label">Stream 3</p>
+                      <p class="stream-speaker">Speaker TBA</p>
+                      <p class="stream-session">Session TBA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">
+              <strong>Final Keynotes</strong>
+            </div>
+          </li>
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">Closing Remarks</div>
+          </li>
+
+          <li class="programme-item">
+            <span class="programme-time">TBC</span>
+            <div class="programme-desc">Drinks &amp; Networking</div>
+          </li>
+
+        </ul>
+        -->
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PARTNERS / SPONSORS
+         EDIT: Replace logo src and href for each sponsor.
+               Add/remove sponsor blocks as needed.
+         ============================================================ -->
+    <section id="partners" aria-labelledby="partners-heading">
+      <div class="container">
+
+        <h2 id="partners-heading">Partners</h2>
+
+        <!-- EDIT: Update Gold Partner name, logo file, and website URL below -->
+        <!-- GOLD PARTNER -->
+        <div class="sponsor-tier sponsor-tier--gold">
+          <p class="sponsor-tier-label">Gold Partner</p>
+          <div class="sponsor-logos">
+            <a href="https://stape.io" class="sponsor-logo-link" target="_blank" rel="noopener"
+              aria-label="Stape.io — Gold Partner">
+              <img src="assets/sponsors/stape.jpg" alt="Stape.io">
+            </a>
+          </div>
+        </div>
+
+        <!-- EDIT: Add/remove Supporting Partner blocks below. Each needs an href and img src. -->
+        <!-- SUPPORTING PARTNERS -->
+        <div class="sponsor-tier sponsor-tier--supporting">
+          <p class="sponsor-tier-label">Supporting Partners</p>
+          <div class="sponsor-logos">
+
+            <a href="https://www.analyticsmania.com" class="sponsor-logo-link" target="_blank" rel="noopener"
+              aria-label="Analytics Mania — Supporting Partner">
+              <img src="assets/sponsors/analytics-mania.png" alt="Analytics Mania">
+            </a>
+
+            <a href="https://8-bit-sheep.com" class="sponsor-logo-link" target="_blank" rel="noopener"
+              aria-label="8-bit-sheep — Supporting Partner">
+              <img src="assets/sponsors/8-bit-sheep.svg" alt="8-bit-sheep">
+            </a>
+
+            <a href="https://mohrstade.com" class="sponsor-logo-link" target="_blank" rel="noopener"
+              aria-label="MohrStade — Supporting Partner">
+              <img src="assets/sponsors/mohrstade.jpg" alt="MohrStade">
+            </a>
+
+          </div>
+        </div>
+
+        <p class="sponsor-cta">
+          Interested in partnering? <a href="https://brandleadership.community/partners/" target="_blank"
+            rel="noopener">Get in touch</a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PAST EDITIONS / ARCHIVE
+         EDIT: After each event, add an entry to the list below.
+               Format: <li><a href="/YEAR/">YEAR · DD Month — Venue, City</a></li>
+         ============================================================ -->
+    <section id="archive" aria-labelledby="archive-heading">
+      <div class="container">
+
+        <h2 id="archive-heading">Past Editions</h2>
+
+        <!-- EDIT: Add past editions here after each event -->
+        <ul class="archive-list">
+          <li>
+            <a href="/2026/">2026 &middot; 29 April &mdash; Campus Carlsberg, Copenhagen</a>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       EDIT: Update copyright year and contact email if needed
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 AnalyticsDev. Hosted by BrandLeadership Community.</p>
+      <ul class="footer-links">
+        <li><a href="https://brandleadership.community" target="_blank" rel="noopener">BrandLeadership Community</a>
+        </li>
+        <li><a href="https://billetto.dk/e/analyticsdev-net-ii-billetter-1913135" target="_blank"
+            rel="noopener">Billetto</a></li>
+        <li><a href="mailto:jomar@brandleadership.community">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Mobile nav toggle -->
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.getElementById('nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }());
+
+    /* Speaker carousel. The scrolling is CSS scroll-snap — touch swipe
+       and keyboard arrows work with no script at all. This adds the
+       arrows and a slow autoplay that yields to the reader: it pauses on
+       hover, on keyboard focus, when the strip scrolls out of view, when
+       the tab is hidden, and when the motion preference asks it to. */
+    (function () {
+      var track = document.querySelector('.hero-speakers-track');
+      var nav = document.querySelector('.hero-speakers-nav');
+      var prev = document.querySelector('[data-carousel-prev]');
+      var next = document.querySelector('[data-carousel-next]');
+      var toggle = document.querySelector('[data-carousel-toggle]');
+      var region = track && track.closest('.hero-speakers');
+      if (!track || !nav || !prev || !next || !toggle || !region) return;
+
+      var INTERVAL = 6000;
+      var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var timer = null;
+
+      // Four separate reasons the strip may sit still. Autoplay runs
+      // only when none of them applies.
+      var wanted = true;    // the reader's play/pause choice
+      var hovering = false;
+      var focused = false;
+      var onscreen = true;
+
+      // A page is however many whole tiles are currently visible, so the
+      // strip always advances by exactly what the viewport shows.
+      function pageWidth() {
+        var tile = track.querySelector('.hero-speaker-tile');
+        if (!tile) return track.clientWidth;
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        var step = tile.getBoundingClientRect().width + gap;
+        return Math.max(1, Math.floor(track.clientWidth / step)) * step;
+      }
+
+      // Fractional tile widths mean scrollLeft never lands exactly on 0
+      // or on the maximum, so both ends need a tolerance.
+      function maxScroll() { return track.scrollWidth - track.clientWidth; }
+      function scrollable() { return maxScroll() > 1; }
+
+      // Past either end it wraps, so the roster keeps circling rather
+      // than parking against a wall the arrows would have to grey out.
+      // No behavior option: scrollBy defers to the stylesheet's
+      // scroll-behavior, which the reduced-motion query already handles.
+      function advance(dir) {
+        if (dir > 0 && track.scrollLeft >= maxScroll() - 1) {
+          track.scrollTo({ left: 0 });
+        } else if (dir < 0 && track.scrollLeft <= 1) {
+          track.scrollTo({ left: maxScroll() });
+        } else {
+          track.scrollBy({ left: dir * pageWidth() });
+        }
+      }
+
+      function running() {
+        return wanted && !hovering && !focused && onscreen &&
+          !document.hidden && !calm.matches && scrollable();
+      }
+
+      function reschedule() {
+        clearInterval(timer);
+        timer = null;
+        if (running()) {
+          timer = setInterval(function () { advance(1); }, INTERVAL);
+        }
+      }
+
+      function setPlaying(on) {
+        wanted = on;
+        nav.setAttribute('data-playing', on ? 'true' : 'false');
+        toggle.setAttribute('aria-label', on ? 'Pause' : 'Play');
+        reschedule();
+      }
+
+      // Driving the strip by hand resets the clock rather than racing it
+      prev.addEventListener('click', function () { advance(-1); reschedule(); });
+      next.addEventListener('click', function () { advance(1); reschedule(); });
+      track.addEventListener('pointerdown', reschedule);
+
+      toggle.addEventListener('click', function () { setPlaying(!wanted); });
+
+      region.addEventListener('pointerenter', function () { hovering = true; reschedule(); });
+      region.addEventListener('pointerleave', function () { hovering = false; reschedule(); });
+      region.addEventListener('focusin', function () { focused = true; reschedule(); });
+      region.addEventListener('focusout', function () { focused = false; reschedule(); });
+
+      document.addEventListener('visibilitychange', reschedule);
+
+      if (window.IntersectionObserver) {
+        new IntersectionObserver(function (entries) {
+          onscreen = entries[0].isIntersecting;
+          reschedule();
+        }, { threshold: 0.2 }).observe(track);
+      }
+
+      calm.addEventListener('change', function () { setPlaying(!calm.matches); });
+
+      // Whole roster fits: no controls, nothing to autoplay
+      function sync() {
+        nav.hidden = !scrollable();
+        reschedule();
+      }
+      window.addEventListener('resize', sync);
+
+      setPlaying(!calm.matches);
+      sync();
+    }());
+  </script>
+
+</body>
+
+</html>
