@@ -1,0 +1,10 @@
+<!-- AnalyticsDev mark — two monospace slashes carrying the wordmark's
+     weight break: hairline "Analytics", bold "Dev". Colours are the site
+     tokens, lifted for a dark ground.
+     Geometry is mirrored in favicon.ico / apple-touch-icon.png — if you
+     change one, regenerate the others. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="AnalyticsDev">
+  <rect width="32" height="32" rx="7" fill="#111827"/>
+  <path d="M4.75 26 L11.75 6 L15 6 L8 26 Z" fill="#C7CDD6"/>
+  <path d="M14 26 L21 6 L27.25 6 L20.25 26 Z" fill="#2FB35F"/>
+</svg>

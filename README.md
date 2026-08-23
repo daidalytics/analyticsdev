@@ -123,17 +123,40 @@ Open `index.html` and find `<section id="partners">`.
 analyticsdev.net/
 ├── index.html            # Current/upcoming event (edit this for each new edition)
 ├── CNAME                 # GitHub Pages domain — do not edit
+├── favicon.ico           # Generated — see "Favicon" below
 ├── README.md             # This file
 ├── css/
 │   └── style.css         # All styles — colours and fonts can be updated here
 ├── assets/
+│   ├── favicon.svg       # The favicon mark — source of truth for the shape
+│   ├── apple-touch-icon.png  # Generated — see "Favicon" below
 │   ├── logo/
 │   │   └── image.png     # Current logo (replace with AnalyticsDev logo when ready)
 │   ├── speakers/         # Speaker headshots — add files here
 │   └── sponsors/         # Sponsor logos — add files here
+├── tools/
+│   └── render-favicon.py # Regenerates favicon.ico and apple-touch-icon.png
 └── 2026/
     └── index.html        # Archive: 2026 edition
 ```
+
+---
+
+## Favicon
+
+The mark is two monospace slashes carrying the wordmark's weight break: a
+hairline "Analytics" slash and a bold "Dev" slash on the site's ink.
+
+`assets/favicon.svg` is the source of truth. `favicon.ico` and
+`assets/apple-touch-icon.png` are rasterised from the same geometry, which is
+duplicated in `tools/render-favicon.py`. To change the mark, edit both the SVG
+and the geometry constants in the script, then run:
+
+```bash
+python3 tools/render-favicon.py
+```
+
+No packages to install — the script writes PNG and ICO by hand.
 
 ---
 

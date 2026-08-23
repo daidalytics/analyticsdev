@@ -601,6 +601,31 @@ section + section {
    ABOUT SECTION
    ============================================================ */
 
+/* Names the community this event belongs to, set as a namespace path —
+   the same device as the hero eyebrow, one level up. */
+.about-parent {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.about-parent a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-parent a:hover {
+  color: var(--color-accent-hl);
+  border-bottom-color: currentColor;
+}
+
+/* The segment you are already on — no link, full contrast */
+.about-parent-current {
+  color: var(--color-text);
+}
+
 .about-text {
   font-size: 1.0625rem;
   line-height: 1.8;
@@ -1067,25 +1092,142 @@ section + section {
   margin-bottom: 0.5rem;
 }
 
+/* Still used by the 2026 archive page, which lists the pair as one line
+   with no portraits. */
 .programme-directors-names {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 700;
   font-size: 0.9375rem;
 }
 
-/* One name in the pair is linked. The underline is dropped to the muted
-   hairline the rest of the page uses, so the two names still read as one
-   line rather than a link sitting next to plain text. */
-.programme-directors-names a {
+/* Two directors, side by side. Deliberately not the speaker card: these
+   two run the day rather than appear on it, so the portrait sits beside
+   the text instead of on top of it and the pair reads as a footer to the
+   speaker grid rather than two more entries in it. */
+.director-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.director-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Square, and the same grayscale-until-engaged treatment the speaker
+   portraits get, so the two photo styles agree across the section. */
+.director-photo {
+  width: 96px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+  filter: grayscale(1) contrast(1.08);
+  transition: filter 0.45s ease;
+}
+
+.director-card:hover .director-photo,
+.director-card:has(.director-details[open]) .director-photo {
+  filter: grayscale(0) contrast(1);
+}
+
+.director-name {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.25rem;
+}
+
+/* The underline is dropped to the muted hairline the rest of the page
+   uses, so a linked name still sits level with an unlinked one. */
+.director-name a,
+.director-bio a {
   color: var(--color-text);
   text-decoration-color: var(--color-border);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.15s ease, color 0.15s ease;
 }
 
-.programme-directors-names a:hover {
+.director-name a:hover,
+.director-bio a:hover {
   color: var(--color-accent-hl);
   text-decoration-color: currentColor;
+}
+
+.director-role {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-bottom: 0.625rem;
+}
+
+.director-lead {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+}
+
+/* Same drawer as the speaker cards, minus their negative margin: there is
+   no card edge here for the rule to run out to. */
+.director-details {
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.director-bio p,
+.director-bio li {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.director-bio p {
+  padding-bottom: 0.75rem;
+}
+
+/* Selector carries the .director-bio p above it, so the shared paragraph
+   padding is overridden without reaching for !important. */
+.director-bio p.director-bio-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent-hl);
+  padding-bottom: 0.25rem;
+}
+
+.director-bio-list {
+  list-style: none;
+  padding-bottom: 0.75rem;
+}
+
+.director-bio-list li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.director-bio-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 1px;
+  background: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .director-photo {
+    transition: none;
+  }
 }
 
 /* ============================================================
@@ -1366,6 +1508,13 @@ section + section {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Half a container is not enough width for a 96px portrait plus a
+     readable measure, so the two directors stack instead. */
+  .director-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
   /* Facts panel drops below the wordmark rather than beside it */
   .hero-split {
     grid-template-columns: 1fr;
@@ -1467,6 +1616,14 @@ section + section {
 @media (max-width: 480px) {
   .speakers-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Portrait moves above the text: beside it, the bio measure drops to
+     roughly thirty characters and the paragraphs turn into a column of
+     two-word lines. */
+  .director-card {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
   }
 
   /* One card per row: there is nothing left to line up with, so drop the

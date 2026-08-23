@@ -9,6 +9,12 @@
   <meta name="description"
     content="AnalyticsDev is a code-first evening conference for technical digital analysts, implementation specialists, and data engineers. 17 March 2027, Campus Carlsberg, Copenhagen.">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon. The mark lives in assets/favicon.svg; favicon.ico and
+       apple-touch-icon.png are rasterised from the same geometry. -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 </head>
 
 <body>
@@ -19,10 +25,10 @@
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container nav-inner">
 
-      <!-- EDIT: Update the logo href if BLC URL changes -->
-      <a href="https://brandleadership.community" class="nav-logo" target="_blank" rel="noopener"
-        aria-label="BrandLeadership Community">
-        <img src="assets/logo/image.png" alt="BrandLeadership Community">
+      <!-- The logo returns to the top of this page. The BrandLeadership
+           Community is linked from the About section and the footer. -->
+      <a href="#home" class="nav-logo" aria-label="AnalyticsDev — back to top">
+        <img src="assets/logo/image.png" alt="">
       </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
@@ -179,11 +185,17 @@
     <section id="about" aria-labelledby="about-heading">
       <div class="container">
 
+        <!-- The community this event sits inside, set as a namespace path -->
+        <p class="about-parent"><a href="https://brandleadership.community" target="_blank"
+            rel="noopener">brandleadership.community</a> / <span class="about-parent-current">analyticsdev</span></p>
+
         <h2 id="about-heading">Analytics, engineered</h2>
         <p class="about-text">
-          AnalyticsDev is an evening conference built for the people doing the work — implementation engineers, data
-          engineers, and technical analysts who live in the detail of tagging, tracking, cloud infrastructure, and
-          analytics engineering. We bring together practitioners to share real-world solutions, not strategy decks.
+          AnalyticsDev is part of the <a href="https://brandleadership.community" target="_blank"
+            rel="noopener">BrandLeadership Community</a>: an evening conference built for the people doing the work —
+          implementation engineers, data engineers, and technical analysts who live in the detail of tagging, tracking,
+          cloud infrastructure, and analytics engineering. We bring together practitioners to share real-world
+          solutions, not strategy decks.
         </p>
         <p class="about-text">
           Expect hands-on lightning talks, expert keynotes, and curated peer discussions focused on practical
@@ -403,11 +415,83 @@
 
         </div><!-- /speakers-grid -->
 
-        <!-- EDIT: Update programme director names if they change -->
+        <!-- EDIT: Update programme director names, photos and bios if they change.
+             Photos live in assets/programme-directors/ -->
         <div class="programme-directors">
           <p class="programme-directors-label">Programme Directors</p>
-          <p class="programme-directors-names"><a href="https://gunnargriese.com" target="_blank"
-              rel="noopener">Gunnar Griese</a> &amp; Steen Rasmussen</p>
+
+          <div class="director-grid">
+
+            <article class="director-card">
+              <img class="director-photo" src="assets/programme-directors/gunnar-griese.jpeg" alt="Gunnar Griese">
+              <div class="director-info">
+                <p class="director-name"><a href="https://gunnargriese.com" target="_blank" rel="noopener">Gunnar
+                    Griese</a></p>
+                <p class="director-role text-muted">Measurement Consultant &amp; Analytics Engineer &middot;
+                  8-bit-sheep</p>
+                <p class="director-lead">With over nine years of experience in digital analytics, data science, and
+                  e-commerce, I am a data-driven leader and educator who is passionate about helping businesses leverage
+                  data to optimize their performance and growth.</p>
+                <details class="speaker-details director-details">
+                  <summary>Full bio</summary>
+                  <div class="director-bio">
+                    <p>As Measurement Consultant &amp; Analytics Engineer, I offer my expertise to businesses through
+                      8-bit-sheep. I work to design, develop, and deploy data solutions for clients across various
+                      industries, using Google Cloud Platform, Google Analytics, and Google Tag Manager.</p>
+                    <p>As a Lecturer at IHM Business School, I teach the courses &ldquo;Digital Analytics &mdash;
+                      Systems &amp; Technology&rdquo; and &ldquo;Tag Management&rdquo;, where I share my knowledge in
+                      technical digital analytics with aspiring professionals.</p>
+                    <p>My goal is to continue to learn, innovate, and collaborate with diverse and talented people who
+                      share my vision of creating value and impact through data.</p>
+                    <p>Last but not least, I share my thoughts on all things digital analytics frequently on my blog:
+                      <a href="https://gunnargriese.com" target="_blank" rel="noopener">gunnargriese.com</a></p>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <article class="director-card">
+              <img class="director-photo" src="assets/programme-directors/steen-rasmussen.jpeg" alt="Steen Rasmussen">
+              <div class="director-info">
+                <p class="director-name"><a href="https://steen.fyi" target="_blank" rel="noopener">Steen
+                    Rasmussen</a></p>
+                <p class="director-role text-muted">Leader of Brand Analytics Group &middot; Brand Leadership
+                  Community</p>
+                <p class="director-lead">Hi, I&rsquo;m Steen, and I&rsquo;m a digital fixer. I solve the simple,
+                  complex, messy problems that kill commercial momentum &mdash; the ones where you&rsquo;ve tried
+                  everything, burned through consultants, and still aren&rsquo;t getting the results you need.</p>
+                <details class="speaker-details director-details">
+                  <summary>Full bio</summary>
+                  <div class="director-bio">
+                    <p>I co-founded IIH Nordic and spent two decades in the trenches of digital analytics and
+                      data-driven business. Now I work independently, which means I only get called when internal teams
+                      have hit a wall.</p>
+                    <p>And that&rsquo;s exactly where I do my best work. You know that technical implementation
+                      that&rsquo;s been stuck for six months? The SaaS vendor that won&rsquo;t cooperate? The campaign
+                      tracking mess that nobody wants to own? That&rsquo;s where I come in. And the main KPI is
+                      &ldquo;time to fixed&rdquo;. If I can&rsquo;t fix it myself, then I most likely know someone who
+                      can.</p>
+                    <p class="director-bio-label">Examples</p>
+                    <ul class="director-bio-list">
+                      <li>Resolving issues and opportunities in the trinity of agency, vendor and client</li>
+                      <li>People, process and technology issues</li>
+                      <li>Getting more out of the marketing budget</li>
+                      <li>Implementations gone sideways</li>
+                      <li>KPI frameworks that drive decisions instead of collecting dust</li>
+                    </ul>
+                    <p class="director-bio-label">Why I can fix it when others can&rsquo;t</p>
+                    <p>I don&rsquo;t do theory. I focus on practical outcomes over technical achievements. After 25
+                      years in the industry working for all types of organisations, I&rsquo;ve seen every flavour of
+                      digital problem and, more importantly, I know how to get you unstuck.</p>
+                    <p>So if you or your team has been wrestling with something for days, weeks or months and you need
+                      someone who cuts through complexity, let&rsquo;s talk. If not, connect or follow me, so you can
+                      find me when you need me &mdash; because you know you&rsquo;re going to need me.</p>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+          </div>
         </div>
 
       </div>
