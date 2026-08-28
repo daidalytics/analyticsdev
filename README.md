@@ -4,6 +4,10 @@ Static conference website for [AnalyticsDev](https://analyticsdev.net), a code-f
 
 Hosted on **GitHub Pages**. Edit HTML files directly and push to `main` — no build step needed.
 
+> **New to this?** Start with **[onboarding.md](onboarding.md)** — a from-scratch guide
+> covering GitHub accounts, VS Code, and how to make your first change safely. This
+> README assumes you already have access and know the workflow.
+
 ---
 
 ## How to update the site
@@ -316,8 +320,20 @@ Once DNS resolves to the GitHub IPs, tick **Enforce HTTPS** in **Settings → Pa
 
 ---
 
-### Two things to watch
+### Three things to watch
 
 **Underscore-prefixed files are not published.** GitHub Pages runs Jekyll by default, which skips files and folders starting with `_` — so `_test.html` and `2026/_test.html` stay out of the live site. To bypass Jekyll entirely, add an empty `.nojekyll` file at the repo root, but rename the test files first or they will go live.
 
+**The internal docs are excluded from the live site.** `_config.yml` lists `README.md`, `SPEC.md`, `TODO.md` and `onboarding.md` under `exclude`, so they stay in the repository but are never copied to `analyticsdev.net`. This depends on Jekyll running — adding a `.nojekyll` file switches Jekyll off and would publish all four at URLs like `analyticsdev.net/onboarding.md`. Note that "excluded from the site" is not the same as private: the repo itself is public, so anyone can still read them on GitHub.
+
 **Absolute links only work on the custom domain.** The archive links use absolute paths like `href="/2026/"`. Those resolve correctly at `analyticsdev.net`, but break if the site is previewed at a repo subpath (e.g. `gunnargriese.com/analyticsdev/`) before DNS is live. Expect broken archive links during that window only.
+
+
+# To DO
+
+* ~~Remove Stape for now~~ (done — the Gold Partner block in `index.html` is commented out pending their confirmation for 2027; un-comment it when they confirm)
+* ~~Update link to Billetto~~ (done)
+* Add bios for speakers (Lisa to send)
+* Add Piwik Pro tracking (via GTM) — GTM container `GTM-5Z4PKJ8L` is installed on all pages; the Piwik Pro tag still needs configuring inside GTM
+* Intro for Lisa on how to update the page
+* Ping Jens to update DNS records

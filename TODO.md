@@ -1,2 +1,0 @@
-- Link to Masterclasses on BLC
-- "Julekalender" (Christmas calendar) for speakers (4x3 grid of images)

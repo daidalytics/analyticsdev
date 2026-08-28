@@ -1,0 +1,16 @@
+# Jekyll configuration for GitHub Pages.
+#
+# The site is plain static HTML — there is no build step and no theme. This file
+# exists for one reason: to keep the internal Markdown docs out of the published
+# site. Everything listed under `exclude` stays in the repository but is never
+# copied to analyticsdev.net.
+#
+# NOTE: this only works while Jekyll is running. If a `.nojekyll` file is ever
+# added at the repo root, Jekyll is bypassed entirely and every file below goes
+# live. Delete `.nojekyll` or rename these files if that ever happens.
+
+exclude:
+  - README.md
+  - SPEC.md
+  - TODO.md
+  - onboarding.md
