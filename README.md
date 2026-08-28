@@ -250,69 +250,9 @@ dig +short analyticsdev.net A
 dig +short www.analyticsdev.net
 ```
 
-<details>
-<summary><strong>Brief for the domain administrator</strong> (copy-paste)</summary>
-
-If someone else administers the zone, send them this. It is deliberately plain
-text — most chat clients render markdown syntax literally.
-
-```
-Hi Jens,
-
-The AnalyticsDev page is built and live on GitHub Pages — repo is
-daidalytics/analyticsdev (public). Ready for the DNS cutover whenever suits you.
-
-Two things needed on analyticsdev.net (nameservers are Simply.com):
-
-1. Remove the existing URL forwarding.
-The apex currently points to 94.231.103.100, Simply's URL-forwarder, which 302s
-to brandleadership.community/Insights/analytics-dev-17-march-2027/. Please
-disable the forwarding in Simply's control panel rather than only deleting the
-A record, so it doesn't get re-added automatically.
-
-2. Add these records.
-
-Apex (analyticsdev.net) — four A records:
-  185.199.108.153
-  185.199.109.153
-  185.199.110.153
-  185.199.111.153
-
-Apex (analyticsdev.net) — four AAAA records, optional but recommended:
-  2606:50c0:8000::153
-  2606:50c0:8001::153
-  2606:50c0:8002::153
-  2606:50c0:8003::153
-
-www — one CNAME:
-  www.analyticsdev.net.  CNAME  daidalytics.github.io.
-
-GitHub then redirects www to the apex automatically. Four A records rather than
-a single alias because DNS doesn't permit a CNAME at the zone apex — they're
-GitHub's anycast edge servers, and the site is selected by the Host header.
-
-There are no MX or TXT records on the domain today, so nothing else is affected
-and there's no email to disrupt. Current TTL is around 10 minutes, so the
-cutover should propagate quickly.
-
-Once it resolves, GitHub issues a Let's Encrypt certificate automatically,
-usually within the hour, and I'll enable "Enforce HTTPS" from our side. That
-also clears the browser security warnings you saw on the old redirect, since
-the domain gets a real certificate of its own for the first time.
-
-The new page links out to BLC and Billetto, so the destinations the old
-redirect covered stay reachable.
-
-Happy to jump on a quick call if easier. Thanks!
-
-Gunnar
-```
-
 Until the zone is updated, **Settings → Pages** shows "DNS Check in Progress"
 and greys out **Enforce HTTPS**. Both are expected while the apex still resolves
 to the old forwarder, and clear on their own once the records propagate.
-
-</details>
 
 **4. Turn on HTTPS**
 
@@ -327,13 +267,3 @@ Once DNS resolves to the GitHub IPs, tick **Enforce HTTPS** in **Settings → Pa
 **The internal docs are excluded from the live site.** `_config.yml` lists `README.md`, `SPEC.md`, `TODO.md` and `onboarding.md` under `exclude`, so they stay in the repository but are never copied to `analyticsdev.net`. This depends on Jekyll running — adding a `.nojekyll` file switches Jekyll off and would publish all four at URLs like `analyticsdev.net/onboarding.md`. Note that "excluded from the site" is not the same as private: the repo itself is public, so anyone can still read them on GitHub.
 
 **Absolute links only work on the custom domain.** The archive links use absolute paths like `href="/2026/"`. Those resolve correctly at `analyticsdev.net`, but break if the site is previewed at a repo subpath (e.g. `gunnargriese.com/analyticsdev/`) before DNS is live. Expect broken archive links during that window only.
-
-
-# To DO
-
-* ~~Remove Stape for now~~ (done — the Gold Partner block in `index.html` is commented out pending their confirmation for 2027; un-comment it when they confirm)
-* ~~Update link to Billetto~~ (done)
-* Add bios for speakers (Lisa to send)
-* Add Piwik Pro tracking (via GTM) — GTM container `GTM-5Z4PKJ8L` is installed on all pages; the Piwik Pro tag still needs configuring inside GTM
-* Intro for Lisa on how to update the page
-* Ping Jens to update DNS records
