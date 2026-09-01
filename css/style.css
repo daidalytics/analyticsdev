@@ -1500,6 +1500,97 @@ section + section {
 }
 
 /* ============================================================
+   WEBCAST SERIES (/webcast/)
+
+   NOTE: new rules belong ABOVE this point. Everything below is inside a
+   media query — styles appended to the end of this file only apply on
+   phones.
+   ============================================================ */
+
+/* A stack, not a grid. At one episode a grid looks broken; at twenty a
+   stack still reads. The rule between entries is the same hairline the
+   archive list and facts panel use — no wrapper element needed, so an
+   editor only ever pastes the <article> itself. */
+.episode + .episode {
+  border-top: 1px solid var(--color-border);
+  padding-top: 3rem;
+}
+
+/* Episode number and date as a mono identifier — the same idiom as the
+   hero eyebrow and the archive list. */
+.episode-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.episode-title {
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}
+
+/* Guest before hosts, set quieter than the title but louder than the date */
+.episode-guests {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* 16:9 without the padding-bottom hack: the box holds the ratio and the
+   iframe fills it. The border keeps the frame visible while the lazy
+   iframe is still loading. */
+.episode-video {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  margin-bottom: 1.5rem;
+}
+
+.episode-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.episode-desc {
+  max-width: 68ch;
+  margin-bottom: 1rem;
+}
+
+/* The one line worth reading if you read nothing else. Ruled left in the
+   signal green rather than boxed — a quote, not a callout panel. */
+.episode-takeaway {
+  border-left: 3px solid var(--color-accent-hl);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.episode-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.episode-links a:hover {
+  color: var(--color-accent-hl);
+}
+
+/* Not a disabled link — a statement of fact, until the show launches and
+   an editor swaps this line for a real anchor. */
+.episode-links-pending {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
    RESPONSIVE — TABLET (≤768px)
    ============================================================ */
 
@@ -1532,6 +1623,16 @@ section + section {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  /* Long episode titles run to three lines on a tablet at the desktop
+     size, which pushes the video below the fold. */
+  .episode-title {
+    font-size: 1.1875rem;
+  }
+
+  .episode + .episode {
+    padding-top: 2rem;
   }
 }
 

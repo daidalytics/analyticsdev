@@ -121,6 +121,48 @@ Open `index.html` and find `<section id="partners">`.
 
 ---
 
+### 6. Add a webcast episode
+
+Episodes live on their own page, `webcast/index.html`, **not** on the event page. The series continues between conferences, so the page is deliberately not tied to a year — that way the back catalogue does not get archived along with each edition.
+
+Open `webcast/index.html` and find the `<section id="episodes">` block.
+
+1. **Copy the whole `<article class="episode">` block**, from the `<!-- EPISODE -->` comment down to `</article>`.
+2. **Paste it above the existing one.** Newest episode goes first.
+3. Update the fields marked `<!-- EDIT: ... -->`:
+   - **Episode number and date** — `Episode 02 · 14 October 2026`
+   - **Title** and **guests** (guest first, then the hosts)
+   - **Video** — see below
+   - **Description** — one or two paragraphs
+   - **Takeaway** — the one-line summary. Delete the whole `<p class="episode-takeaway">` block if the episode does not have one.
+   - **Spotify link** — see below
+
+**The video.** On the video's page, use **Share → Embed** and copy the code. It looks like this:
+
+```html
+<div style="width:100%; height:0; position: relative; padding-bottom:56.25%"><iframe title="Video Player" src="//blc.twentythree.com/..." style="..." frameborder="0" ...></iframe></div>
+```
+
+You only need the `src` — paste it into the `src="..."` of the iframe already in the block, and leave everything else alone. The sizing is handled by `css/style.css`, so the `style="..."` attributes in the copied code are not needed.
+
+> **Two things to check.** If the URL ends in `&autoPlay=1`, **delete that part** — otherwise the video starts playing by itself the moment someone opens the page. And if the URL starts with `//`, change it to `https://`.
+
+**The Spotify link.** Episodes go up on Spotify after the live broadcast, so a new episode starts with this placeholder line:
+
+```html
+<p class="episode-links episode-links-pending">Audio version coming to Spotify</p>
+```
+
+Once the episode is live on Spotify, replace that whole line with:
+
+```html
+<p class="episode-links"><a href="PASTE_SPOTIFY_URL" target="_blank" rel="noopener">Listen on Spotify &rarr;</a></p>
+```
+
+**Do not** change the navigation on `webcast/index.html` — it deliberately matches the home page nav, with `/#about`-style links so the items still reach the home page's sections.
+
+---
+
 ## File structure
 
 ```
@@ -140,6 +182,8 @@ analyticsdev.net/
 │   └── sponsors/         # Sponsor logos — add files here
 ├── tools/
 │   └── render-favicon.py # Regenerates favicon.ico and apple-touch-icon.png
+├── webcast/
+│   └── index.html        # Webcast Series — episodes, not tied to any year
 └── 2026/
     └── index.html        # Archive: 2026 edition
 ```

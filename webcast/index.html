@@ -46,17 +46,21 @@
         <img src="../assets/logo/image.png" alt="">
       </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"
-        aria-controls="nav-links-webcast">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links-webcast">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
+      <!-- Same items as the home page nav. The anchors are absolute (/#about
+           rather than #about) so they reach the home page's sections from
+           here — a bare #about would land on this page's own About. -->
       <ul class="nav-links" id="nav-links-webcast">
-        <li><a href="#about">The Series</a></li>
-        <li><a href="#episodes">Episodes</a></li>
-        <li><a href="/">Current Edition</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#speakers">Speakers</a></li>
+        <li><a href="/#programme">Programme</a></li>
+        <li><a href="/webcast/" aria-current="page">Webcast</a></li>
+        <li><a href="/#partners">Partners</a></li>
       </ul>
 
     </div>
@@ -92,8 +96,9 @@
         <p class="about-text">
           The AnalyticsDev.net Webcast Series is a live conversation series for technical analytics practitioners —
           analytics engineers, data engineers, AI engineers, marketing technologists, and advanced digital analysts.
-          Hosted by Gunnar Griese, it brings together speakers, expert attendees, and future contributors to explore
-          modern measurement, analytics engineering, data activation, AI, and implementation practice.
+          Hosted by Gunnar Griese and Steen Rasmussen, it brings together speakers, expert attendees, and future
+          contributors to explore modern measurement, analytics engineering, data activation, AI, and implementation
+          practice.
         </p>
         <p class="about-text">
           Each episode continues the AnalyticsDev.net conversation beyond the conference — a practical community space
@@ -114,8 +119,61 @@
 
         <h2 id="episodes-heading">Episodes</h2>
 
-        <!-- EDIT: Replace the line below with the first episode block. -->
-        <p class="archive-empty">The first episode is on its way — check back shortly.</p>
+        <!-- ============================================================
+             EPISODE — copy this whole block to add a new episode.
+             Put the NEWEST episode first.
+             ============================================================ -->
+        <article class="episode">
+
+          <!-- EDIT: episode number and broadcast date -->
+          <p class="episode-meta">Episode 01 &middot; 31 August 2026</p>
+
+          <!-- EDIT: episode title -->
+          <h3 class="episode-title">Analytics in the Age of AI: Why Fundamentals Still Matter</h3>
+
+          <!-- EDIT: guest first, then the hosts -->
+          <p class="episode-guests">Simo Ahava, with Gunnar Griese, Steen Rasmussen &amp; Jomar Reyes</p>
+
+          <!-- EDIT: paste the embed code from the video's Share &rarr; Embed
+               panel. Keep the iframe's src only — the styling lives in
+               css/style.css, so drop any inline style attributes.
+               IMPORTANT: if the URL ends in "&autoPlay=1", delete that part.
+               Video must never start on its own. -->
+          <div class="episode-video">
+            <iframe src="https://blc.twentythree.com/v.ihtml/player.html?source=embed&amp;photo_id=130975359"
+              title="Analytics in the Age of AI: Why Fundamentals Still Matter — with Simo Ahava" loading="lazy"
+              frameborder="0" scrolling="no" allowfullscreen allow="autoplay; fullscreen">
+              <p>Your web browser does not support iframes, which means that the video cannot play.</p>
+            </iframe>
+          </div>
+
+          <!-- EDIT: one or two paragraphs on what the conversation covered -->
+          <p class="episode-desc">
+            When AI can generate code, analysis and answers almost instantly, what happens to expertise? Simo Ahava
+            joins the hosts to look past the question of whether AI replaces analysts, and at what practitioners
+            actually need to understand to use it responsibly. The productivity gains are real — but working a problem
+            through by hand is what builds the mental models that let you recognise a confident answer that happens to
+            be wrong.
+          </p>
+          <p class="episode-desc">
+            The conversation keeps returning to fundamentals that have not moved: reliable measurement still rests on
+            data quality, correct implementation and knowing what the organisation is trying to achieve. Modelling and
+            synthetic data cannot compensate indefinitely for weak real-world data. It widens into a critique of how
+            organisations use analytics at all — what happens when data becomes negotiable, and why analytics is worth
+            more integrated into decisions than run as an answer-producing department.
+          </p>
+
+          <!-- EDIT: the one-line takeaway. Delete this block if an episode has no single takeaway. -->
+          <p class="episode-takeaway">
+            AI can make analytics faster, but speed alone does not create expertise.
+          </p>
+
+          <!-- EDIT: when the Spotify episode is live, replace the whole <p> below with:
+               <p class="episode-links"><a href="PASTE_SPOTIFY_URL" target="_blank"
+                  rel="noopener">Listen on Spotify &rarr;</a></p> -->
+          <p class="episode-links episode-links-pending">Audio version coming to Spotify</p>
+
+        </article>
 
       </div>
     </section>

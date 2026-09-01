@@ -7,7 +7,8 @@ Tick as you go. Do not start a task before its dependencies are ticked.
 
 ## Phase 1 — Resolve the risk
 
-- [ ] **Task 1 — Confirm the TwentyThree player can be framed** · XS · deps: none
+- [x] **Task 1 — Confirm the TwentyThree player can be framed** · XS · deps: none
+      _Resolved: Gunnar supplied the platform’s own Share→Embed code (`source=embed`), so framing is intended. Visual confirm still worthwhile._
   - Acceptance: player renders and plays from a local test file, or a specific
     console refusal is captured
   - Verify: no `X-Frame-Options` / `frame-ancestors` error in DevTools console
@@ -31,7 +32,8 @@ Tick as you go. Do not start a task before its dependencies are ticked.
     `grep -c "GTM-5Z4PKJ8L" webcast/index.html` → `1`
   - Files: `webcast/index.html`
 
-- [ ] **Task 3 — Add the episode 1 block** · S · deps: 2
+- [x] **Task 3 — Add the episode 1 block** · S · deps: 2
+      _Done. Simo Ahava, 31 Aug 2026. No autoplay param in the src._
   - Acceptance: video plays on click, silent on load; Spotify slot is a muted
     pending line, not a dead link; every editable field has an `EDIT` comment
   - Verify: `grep -n "autoPlay" webcast/index.html` → no matches; load with
@@ -39,7 +41,8 @@ Tick as you go. Do not start a task before its dependencies are ticked.
   - Files: `webcast/index.html`
   - ⚠️ Blocked on real broadcast date + description (open question 1)
 
-- [ ] **Task 4 — Add the `WEBCAST SERIES` CSS section** · S · deps: 3
+- [x] **Task 4 — Add the `WEBCAST SERIES` CSS section** · S · deps: 3
+      _Done. 11 rules above the media queries, 0 stranded, tokens only._
   - Acceptance: rules sit **before line 1506**, outside every media query;
     tokens only, no raw hex; video holds 16:9; no horizontal scroll at 320px
   - Verify: `awk 'NR<1506' css/style.css | grep -c "episode"` → non-zero;
@@ -66,7 +69,8 @@ Tick as you go. Do not start a task before its dependencies are ticked.
     click both links
   - Files: `index.html`
 
-- [ ] **Task 6 — Document "Add a webcast episode" in README** · XS · deps: 3, 4
+- [x] **Task 6 — Document "Add a webcast episode" in README** · XS · deps: 3, 4
+      _Done, section 6._
   - Acceptance: numbered consistently; warns to strip `autoPlay=1`; states
     newest-first; file tree updated with `webcast/`
   - Verify: read it as a first-time reader; every filename mentioned exists
@@ -89,8 +93,16 @@ Tick as you go. Do not start a task before its dependencies are ticked.
 
 ## Blocked on Gunnar
 
-- [ ] **Task 1 spike** — open `framing-spike.html` (path in chat) and report
-      Outcome A or B → blocks Task 3
-- [ ] Episode 1 broadcast date + 1–2 sentence description → blocks Task 3
+- [ ] **Visual check of `/webcast/`** — `python3 -m http.server 8000`, open
+      `/webcast/`, confirm the video renders and stays silent until clicked →
+      last gate before Task 7's push
+- [ ] **`allow="autoplay"` on the iframe** — kept as supplied in the Share→Embed
+      code. It grants permission but does not trigger playback; drop the word
+      `autoplay` from the attribute if you want it impossible rather than
+      merely unused.
 - [ ] Guest thumbnail: reuse `assets/speakers/2027/simo-ahava.jpg`, or new still?
+      Not currently used — the page leads with the video instead.
 - [ ] Spotify show URL (launching later this month) → pending state until then
+
+~~Episode 1 date + description~~ — supplied 1 Sep 2026.
+~~Framing spike~~ — resolved by the official embed code.
