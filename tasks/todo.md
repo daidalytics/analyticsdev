@@ -22,7 +22,9 @@ Tick as you go. Do not start a task before its dependencies are ticked.
 
 ## Phase 2 — The page
 
-- [ ] **Task 2 — Create `webcast/index.html` skeleton** · S · deps: 1
+- [x] **Task 2 — Create `webcast/index.html` skeleton** · S · deps: 1
+      _Done, commit `0a8b9ef`. All 21 CSS classes used already existed — the
+      skeleton needed no new styling, confirming Task 4 is episode-only._
   - Acceptance: renders correctly using only existing CSS classes; nav id is
     `nav-links-webcast`; mobile toggle works; headings nest h1→h2
   - Verify: `python3 -m http.server 8000` → `/webcast/`; toggle nav at 375px;
@@ -56,7 +58,8 @@ Tick as you go. Do not start a task before its dependencies are ticked.
 
 ## Phase 3 — Wire-up and documentation
 
-- [ ] **Task 5 — Link `/webcast/` from the root page** · XS · deps: 2
+- [x] **Task 5 — Link `/webcast/` from the root page** · XS · deps: 2
+      _Done, commit `0a8b9ef`. 4-line additions-only diff; no new section._
   - Acceptance: nav + footer links added; **no new section** on `index.html`;
     nav does not wrap at 375px
   - Verify: `git diff --stat index.html` shows a small additions-only diff;
@@ -86,6 +89,8 @@ Tick as you go. Do not start a task before its dependencies are ticked.
 
 ## Blocked on Gunnar
 
+- [ ] **Task 1 spike** — open `framing-spike.html` (path in chat) and report
+      Outcome A or B → blocks Task 3
 - [ ] Episode 1 broadcast date + 1–2 sentence description → blocks Task 3
 - [ ] Guest thumbnail: reuse `assets/speakers/2027/simo-ahava.jpg`, or new still?
 - [ ] Spotify show URL (launching later this month) → pending state until then
