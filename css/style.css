@@ -1541,9 +1541,13 @@ section + section {
 
 /* 16:9 without the padding-bottom hack: the box holds the ratio and the
    iframe fills it. The border keeps the frame visible while the lazy
-   iframe is still loading. */
+   iframe is still loading.
+
+   The 700px measure is the site's text column (.about-text) — video and
+   copy share one left and right edge down the whole episode. */
 .episode-video {
   aspect-ratio: 16 / 9;
+  max-width: 700px;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   margin-bottom: 1.5rem;
@@ -1557,7 +1561,7 @@ section + section {
 }
 
 .episode-desc {
-  max-width: 68ch;
+  max-width: 700px;
   margin-bottom: 1rem;
 }
 
@@ -1567,7 +1571,7 @@ section + section {
   border-left: 3px solid var(--color-accent-hl);
   padding-left: 1rem;
   margin: 1.5rem 0;
-  max-width: 68ch;
+  max-width: 700px;
   font-size: 1.0625rem;
   line-height: 1.5;
 }
