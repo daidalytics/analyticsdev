@@ -14,3 +14,6 @@ exclude:
   - SPEC.md
   - TODO.md
   - onboarding.md
+  # Planning docs. The whole directory, not individual files — anything added
+  # to tasks/ later is excluded automatically rather than needing a new line.
+  - tasks/
